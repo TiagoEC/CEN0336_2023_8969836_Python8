@@ -131,8 +131,6 @@ with open("Python_08.translated.aa", "w") as f:
                         else:
                             seqs[id][protein_frame] += translation_table[codon]
                     
-                    # find the longest translated peptide, consider the start (included) and stop codon
-                    
                     for peptide in re.finditer(r"(M[A-Z]+?)\*", seqs[id][protein_frame]):
                         if len(peptide.group(1)) > longest_peptide_len:
                             longest_peptide_len = len(peptide.group(1))
